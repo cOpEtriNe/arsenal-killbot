@@ -133,7 +133,8 @@ while wait() do
     local roundover = rs.wkspc.Status.RoundOver.Value
     local ffa = rs.wkspc.FFA.Value
     local can_respawn = rs.wkspc.Status.CanRespawn.Value
-    
+    local camera = workspace.CurrentCamera
+
     if is_spectator == false and roundover == false then
         for _,v in next, plrs:GetPlayers() do
             pcall(function()
@@ -145,11 +146,14 @@ while wait() do
                             events.SpawnMe:FireServer()
                         end
                         plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+                        plr.Character.HumanoidRootPart.CFrame = v.Character.Head.CFrame + Vector3.new(0,2,0)
+                        camera.CFrame = CFrame.new(camera.CFrame.p, v.Character.Head.CFrame.p)
                         events.HitPart:FireServer(v.Character.Head, v.Character.Head.Position + Vector3.new(math.random(), math.random(), math.random()), gun.Name, 1, (plr.Character.Head.Position - v.Character.Head.Position).Magnitude, false, (math.random() > .6 and true or false), ismelee, 1, false, gun.FireRate.Value, gun.ReloadTime.Value, gun.Ammo.Value, gun.StoredAmmo.Value, gun.Bullets.Value, gun.EquipTime.Value, gun.RecoilControl.Value, gun.Auto.Value, gun["Speed%"].Value, rs.wkspc.DistributedTime.Value) --thanks ic3w0lf
                     else
                         plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                         plr.Character.HumanoidRootPart.CFrame = v.Character.Head.CFrame + Vector3.new(0,2,0)
                         wait(.4)
+                        camera.CFrame = CFrame.new(camera.CFrame.p, v.Character.Head.CFrame.p)
                         events.HitPart:FireServer(v.Character.Head, v.Character.Head.Position + Vector3.new(math.random(), math.random(), math.random()), gun.Name, 1, (plr.Character.Head.Position - v.Character.Head.Position).Magnitude, false, (math.random() > .6 and true or false), ismelee, 1, false, gun.FireRate.Value, gun.ReloadTime.Value, gun.Ammo.Value, gun.StoredAmmo.Value, gun.Bullets.Value, gun.EquipTime.Value, gun.RecoilControl.Value, gun.Auto.Value, gun["Speed%"].Value, rs.wkspc.DistributedTime.Value) --thanks ic3w0lf
                     end
                 end
