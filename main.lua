@@ -1,5 +1,5 @@
 --[[
-    Author: tostring#1337(325428008834039811)/tostring#1677(723636701410623541)/tostring#1337(807314243270606858)
+    Author: tostring#1337(325428008834039811)/tostring#1677(723636701410623541)/tostring#1337(807314243270606858)/tostring#5101(808776441181372417)
     Description: Arsenal bots with the goal to search & destroy servers
 
     stay mad :troll:
