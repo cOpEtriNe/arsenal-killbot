@@ -11,7 +11,7 @@ end
 
 local config = {
     --ChatSpam = true,
-    --SpamMSG = "This server has been bot  rolled! Join our disꞈcoꞈrd at .g̃g̃/arsenal",
+    --SpamMSG = "This server has been bot rolled! There is nothing you can do!",
     
     SpamRespawn = false,
     
